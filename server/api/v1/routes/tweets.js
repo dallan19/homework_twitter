@@ -47,7 +47,7 @@ router.route("/")
     	}
 
     	if(req.body.locate==undefined || req.body.locate==null || !req.body.locate){
-    		res.json({message : "El parametro autor no ha sido enviado. "})
+    		res.json({message : "El parametro locate no ha sido enviado. "})
     		return;
     	}else if (!req.body.locate.length > 64){
     		res.json({message : "La ubicación no puede exceder los  64 caracteres"})
@@ -55,7 +55,7 @@ router.route("/")
     	}
 
 
-    	list.add(req.body.content, req.body.autor, req.body.locate)
+    	list.add(req.body.content, req.body.author, req.body.locate)
 	    res.json(list.getLast()) 	
     });
 
