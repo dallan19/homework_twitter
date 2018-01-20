@@ -34,12 +34,12 @@ npm start
 
 * GET `/tweets/:id` : Busca el tweet por su id.
 	* **URL Params**
-	`id=[integer]`
+	`id=[String]`
 
 * POST `/tweets` : Crea un nuevo tweet en memoria.
 	* **Data Params:**
 	```json
-	author=[string]
+	author=[ObjectId]
 	content=[string]
 	locate=[string]
 	```
@@ -47,7 +47,7 @@ npm start
 	* **Example:**
 	```json
 	{
-		"author": "Pedro Fabio",
+		"author": "5a63c04bc426131d483c6ce6",
 		"content": "Lavadoras & algo más",
 		"locate": "Cienaga"
 	}
@@ -56,7 +56,6 @@ npm start
 * PUT `/tweets/:id` : Edita el tweet correspondiente al :id enviado como parametro en la url.
 	* **Data Params:**
 	```json
-	author=[string]
 	content=[string]
 	locate=[string]
 	```
@@ -64,15 +63,60 @@ npm start
 	* **Example:**
 	```json
 	{
-		"author": "Pedro Fabio",
 		"content": "Lavadoras & algo más",
 		"locate": "Cienaga"
 	}
 	 ```
 
-* DELETE `/tweets/:id` : Elimina el tweet guardado en memoria.
+* DELETE `/tweets/:id` : Elimina el tweet de manera logica.
 	* **URL Params**
-	`id=[integer]`
+	`id=[String]`
+
+Usuarios
+
+* GET `/users` : Todos los usuarios almacenados en memoria.
+
+* GET `/users/:id` : Busca el usuario por su id.
+	* **URL Params**
+	`id=[String]`
+
+* POST `/users` : Crea un nuevo usuario en memoria.
+	* **Data Params:**
+	```json
+	firstname=[ObjectId]
+	lastname=[string]
+	email=[string]
+	```
+
+	* **Example:**
+	```json
+	{
+	  "firstname":"Dallan",
+	  "lastname":"Nuñez",
+	  "email":"dallan@gmail.com"
+	}
+	 ```
+
+* PUT `/users/:id` : Edita el usuario correspondiente al :id enviado como parametro en la url.
+	* **Data Params:**
+	```json
+	firstname=[string]
+	lastname=[string]
+	email=[string]
+	```
+
+	* **Example:**
+	```json
+	{
+	  "firstname":"Dallan",
+	  "lastname":"Nuñez",
+	  "email":"dallan@gmail.com"
+	}
+	 ```
+
+* DELETE `/users/:id` : Elimina el usuario de manera logica.
+	* **URL Params**
+	`id=[String]`
 
 ## License
 

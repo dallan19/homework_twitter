@@ -1,8 +1,10 @@
 "use strict";
 
 const router = require("express").Router();
-const tweetsRoutes = require("./routes/tweets");
+const tweets = require('./tweets/routes');
+const users = require('./users/routes');
 
-router.use("/tweets", tweetsRoutes);
+router.use('/tweets', tweets);
+router.use('/users', users);
 
 module.exports = router;
