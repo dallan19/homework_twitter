@@ -26,7 +26,7 @@ exports.all = (req, res, next) => {
         .find({ 'active': true })
         .skip(skip)
         .limit(limit)
-        .populate('author')
+        .populate({ path: 'author', match: { active: true}})
         .then( tweets => {
             res.json({
                 data: tweets,

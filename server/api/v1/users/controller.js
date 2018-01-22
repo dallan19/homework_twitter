@@ -22,7 +22,7 @@ exports.all = (req, res, next) => {
     const skip = Number(req.query.skip) || 0;
     
     Model
-        .find({ 'active': true })
+        .find({'active':true})
         .skip(skip)
         .limit(limit)
         .then( users => {
