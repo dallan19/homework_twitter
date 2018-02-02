@@ -1,10 +1,14 @@
-"use strict";
+require('dotenv').config()
 
 const config = { 
-    hostname: '127.0.0.1',
-    port: 8080,
+    hostname: process.env.IP,
+    port: process.env.PORT,
     db: {
-        url: 'mongodb://localhost/twitter_db'
+        url: process.env.DBURL
+    },
+    cors: {
+        origin: process.env.ORIGIN || '*',
+        credentials: Boolean(process.env.CREDENTIALS)
     }
 };
 
